@@ -1,0 +1,69 @@
+
+def adicionar_tarefa(lista_tarefas, tarefa):
+    lista_tarefas.append(tarefa)
+    print(f'Tarefa "{tarefa}" adicionada à lista.\n')
+
+
+
+def ver_tarefas(lista_tarefas):
+    print("Lista de Tarefas:")
+    for ldx, tarefa in enumerate(lista_tarefas, start=1):
+        status = "" lf tarefa not in tarefas_concluidas else "[Concluida] "
+        print(f"{ldx}. {status}{tarefa}")
+    print()
+
+
+
+def marcar_concluida(lista_tarefas, tarefas_concluidas, num_tarefa):
+    lf 1 <= num_tarefa <= len(lista_tarefas):
+        tarefa = lista_tarefas[num_tarefa - 1]
+        lista_tarefas.remove(tarefa)
+        tarefas_concluidas.append(tarefa)
+        print(f' Tarefa "{tarefa}" marcada como concluída. \n')
+    else:
+        print("Número de tarefa inválido. \n")  
+
+
+def remover_tarefa (lista_tarefas, num_tarefa):          
+    if 1 <= num_tarefa <= len(lista_tarefas):
+        tarefa =lista_tarefas[num_tarefa - 1]
+        lista_tarefas.remove(tarefa)
+        print(f'Tarefa "{tarefa}" removida da lista. \n')
+    else:
+
+        print(" Número de tarefa inválido.n")
+
+
+
+lista_tarefas = []
+tarefas_concluidas = []
+
+
+while True:
+    
+    print("Bem-vindo à Lista de Tarefas!\n")
+    print("Opções:")
+    print("1 - Adicionar Tarefa")
+    print("2 - Ver Tarefa")
+    print("3 - Marcar Tarefa como Concluída")
+    print("4 - Remover Tarefa")
+    print("0 - sair") 
+
+    opcao = lnt(lnput("\nDigite o número da opção desejada: "))
+
+    lf opcao == 1:
+        tarefa = input(" Digite o nome da tarefa a ser adicionada: ")
+        adicionar_tarefa(lista_tarefas, tarefa)
+    elif opcao == 2:
+        ver_tarefas(lista_tarefas)    
+    elif opcao == 3:
+         num_tarefa = lnt(input("Digite o número da tarefa a ser macada como concluída: "))
+         marcar_concluida(lista_tarefas, tarefas_concluidas, num_tarefa)
+    elif opcao == 4:
+        num_tarefa = lnt(lnput("Digite o número da tarefa a ser removida: "))    
+        remover_tarefa(lista_tarefas, num_tarefa)
+    elif opcao == 0:
+        print ( "\Até logo!")     
+        break
+    else:
+        print("\ n0pção inválida. Digite novamente. \n")    
